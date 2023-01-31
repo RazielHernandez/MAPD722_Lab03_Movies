@@ -13,9 +13,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Starter Template',
-      theme: ThemeData(
-        primarySwatch: Colors.red,
-      ),
+      /*theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),*/
       home: MovieViewList()
     );
   }

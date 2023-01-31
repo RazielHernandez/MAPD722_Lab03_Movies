@@ -12,6 +12,16 @@ class MovieViewList extends StatelessWidget {
     "World War Z"
   ];
 
+  final List moviesYears = [
+    "1995",
+    "2016",
+    "2001",
+    "2009",
+    "2013",
+    "2014",
+    "2013"
+  ];
+
   @override
   Widget build(BuildContext context){
     return Scaffold(
@@ -24,10 +34,22 @@ class MovieViewList extends StatelessWidget {
         itemCount: movies.length,
         itemBuilder: (BuildContext context, int index){
           return Card(
+            elevation: 5.5,
             color: Colors.white,
             child: ListTile(
+              leading: CircleAvatar(
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: Colors.blue,
+                    borderRadius: BorderRadius.circular(13.9),
+                  ),
+                  child: Icon(Icons.movie),
+                ),
+              ),
+              trailing: Text("..."),
               title: Text(movies[index]),
-              //subtitle: Text("Movie subtitle"),
+              subtitle: Text(moviesYears[index]),
+              onTap: () => debugPrint("Movie name: ${movies.elementAt(index)}"),
             ),
           );
         },
@@ -35,55 +57,3 @@ class MovieViewList extends StatelessWidget {
     );
   }
 }
-
-/*
-class Home extends StatelessWidget {
-  const Home({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          'Movies Carlos Hernandez',
-          style: TextStyle(color: Colors.black87),
-        ),
-        backgroundColor: Colors.white,
-        iconTheme: IconThemeData(color: Colors.black54),
-        brightness: Brightness.light,
-        leading: IconButton(icon: Icon(Icons.menu), onPressed: () {}),
-        actions: <Widget>[
-          IconButton(icon: Icon(Icons.cloud_queue), onPressed: () {})
-        ],
-      ),
-      body: _buildBody(),
-    );
-  }
-
-  Widget _buildBody() {
-    return SingleChildScrollView(
-      child: Column(
-        children: <Widget>[
-          //_buildJournalHeaderImage(),
-          SafeArea(
-            child: Padding(
-              padding: EdgeInsets.all(16.0),
-              child: Column(         
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: <Widget>[
-                  //_buildJournalEntry(),
-                  Divider(),
-                  //_buildJournalWeather(),
-                  Divider(),
-                  //_buildJournalTags(),
-                  Divider(),
-                  //_buildJournalFooterImages(),
-                ],
-              ),
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-}*/
