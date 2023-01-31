@@ -1,5 +1,42 @@
 import 'package:flutter/material.dart';
 
+class MovieViewList extends StatelessWidget {
+
+  final List movies = [
+    "Brave Heart",
+    "Moonlight",
+    "Lord of the rings",
+    "Avatar",
+    "The wolf of wall street",
+    "Interestellar",
+    "World War Z"
+  ];
+
+  @override
+  Widget build(BuildContext context){
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Movies"),
+        backgroundColor: Colors.blueGrey.shade900,
+      ),
+      backgroundColor: Colors.blueGrey.shade400,
+      body: ListView.builder(
+        itemCount: movies.length,
+        itemBuilder: (BuildContext context, int index){
+          return Card(
+            color: Colors.white,
+            child: ListTile(
+              title: Text(movies[index]),
+              //subtitle: Text("Movie subtitle"),
+            ),
+          );
+        },
+      )
+    );
+  }
+}
+
+/*
 class Home extends StatelessWidget {
   const Home({super.key});
 
@@ -49,4 +86,4 @@ class Home extends StatelessWidget {
       ),
     );
   }
-}
+}*/
