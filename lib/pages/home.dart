@@ -26,7 +26,7 @@ class MovieViewList extends StatelessWidget {
   Widget build(BuildContext context){
     return Scaffold(
       appBar: AppBar(
-        title: Text("Movies"),
+        title: Text("Movies Carlos Hernandez"),
         backgroundColor: Colors.blueGrey.shade900,
       ),
       backgroundColor: Colors.blueGrey.shade400,
